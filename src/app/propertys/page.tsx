@@ -8,6 +8,9 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 export default function Propertys() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const openModal = () => setIsModalOpen(true);
+
     const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -22,7 +25,7 @@ export default function Propertys() {
     return (
 
         <div className="mb-28">
-            <Modal modalTitle="Adicionar imóvel">
+            <Modal modalTitle="Adicionar imóvel" isOpen={isModalOpen} setIsOpen={setIsModalOpen}>
                 <form onSubmit={handleSubmit((data) => {
                     console.log(data)
                 })}>
@@ -177,10 +180,10 @@ export default function Propertys() {
                 <Header />
             </header>
             <div className="gap-x-2 flex justify-end text-xl py-5 max-w-[90%] mx-auto">
-                <span className="cursor-pointer flex items-center gap-x-2 text-base">
+                <button onClick={openModal} className="cursor-pointer flex items-center gap-x-2 text-base">
                     <PlusCircle size={16} />
                     <p className="text-lg font-semibold">Adicionar imóvel</p>
-                </span>
+                </button>
             </div>
             <div className="max-w-[90%] mx-auto">
                 <Card title="Casa em santa tereza, três quartos, sala, cozinha americana sala, cozinha americana" home>

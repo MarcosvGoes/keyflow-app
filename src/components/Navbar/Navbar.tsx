@@ -1,5 +1,5 @@
 'use client'
-import { DollarSign, House, LayoutDashboard, LogOut, Ellipsis } from "lucide-react";
+import { House, LayoutDashboard, LogOut, Ellipsis, Wallet } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -19,16 +19,16 @@ export default function Navbar() {
             <hr className="py-5 max-w-[80%] mx-auto hidden lg:flex" />
             <ul className="flex justify-around max-w-[80%] mx-auto lg:flex-col lg:gap-10">
                 <Link href="/dashboard">
-                    <li className={`flex flex-col items-center gap-2 lg:gap-5 lg:flex-row ${pathname === '/dashboard' ? "text-blue-600" : ""}`}><LayoutDashboard /><span className="font-semibold text-xs lg:text-2xl">Dashboard</span></li>
+                    <li className={`flex flex-col items-center gap-2 lg:gap-5 lg:flex-row ${pathname === '/dashboard' ? "text-blue-600" : ""}`}><LayoutDashboard size={20} /><span className="font-semibold text-xs lg:text-2xl">Dashboard</span></li>
                 </Link>
                 <Link href="/finances">
-                    <li className={`flex flex-col items-center gap-2 lg:gap-5 lg:flex-row ${pathname === '/finances' ? "text-blue-600" : ""}`}><DollarSign /><span className="font-semibold text-xs lg:text-2xl">Finanças</span></li>
+                    <li className={`flex flex-col items-center gap-2 lg:gap-5 lg:flex-row ${pathname === '/finances' ? "text-blue-600" : ""}`}><Wallet size={20} /><span className="font-semibold text-xs lg:text-2xl">Finanças</span></li>
                 </Link>
                 <Link href="/propertys">
-                    <li className={`flex flex-col items-center gap-2 lg:gap-5 lg:flex-row ${pathname === '/propertys' ? "text-blue-600" : ""}`}><House /><span className="font-semibold text-xs lg:text-2xl">Imóveis</span></li>
+                    <li className={`flex flex-col items-center gap-2 lg:gap-5 lg:flex-row ${pathname === '/propertys' ? "text-blue-600" : ""}`}><House size={20} /><span className="font-semibold text-xs lg:text-2xl">Imóveis</span></li>
                 </Link>
                 <Link href="/settings">
-                    <li className={`flex flex-col items-center gap-2 lg:gap-5 lg:flex-row ${pathname === '/settings' ? "text-blue-600" : ""}`}><Ellipsis /><span className="font-semibold text-xs lg:text-2xl">Mais</span></li>
+                    <li className={`flex flex-col items-center gap-2 lg:gap-5 lg:flex-row ${pathname === '/settings' ? "text-blue-600" : ""}`}><Ellipsis size={20} /><span className="font-semibold text-xs lg:text-2xl">Mais</span></li>
                 </Link>
             </ul>
             <Link href="#" className="mt-auto mb-10">
